@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 import fitz  # this works after installing pymupdf
 from dotenv import load_dotenv
 
