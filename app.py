@@ -1,16 +1,14 @@
-import os
 import streamlit as st
-import fitz  # PyMuPDF
+import fitz  # this works after installing pymupdf
 from dotenv import load_dotenv
 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import Qdrant
-from langchain.chat_models import ChatOpenAI
+from langchain_community.vectorstores import Qdrant
+from langchain_openai import OpenAIEmbeddings
 from langchain.chains import RetrievalQA
+from langchain.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
-from langchain.chains import RetrievalQA
-from langchain.chat_models import ChatOpenAI
+
 
 
 from qdrant_client import QdrantClient

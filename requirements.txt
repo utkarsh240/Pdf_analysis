@@ -1,8 +1,10 @@
 streamlit
-PyMuPDF
-langchain>=0.1.13
-langchain-openai
+pymupdf
 openai
 qdrant-client
 tiktoken
 python-dotenv
+
+langchain>=0.1.13
+langchain-openai
+langchain-community
