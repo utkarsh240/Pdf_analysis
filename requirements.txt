@@ -1,6 +1,7 @@
 streamlit
 PyMuPDF
 langchain>=0.1.13
+langchain-openai
 openai
 qdrant-client
 tiktoken
