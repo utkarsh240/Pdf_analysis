@@ -1,83 +1,32 @@
-📄 PDF Q&A with LangChain, OpenAI, and Qdrant
-This Streamlit app allows users to upload a PDF file and ask questions about its content using natural language. It utilizes LangChain for LLM orchestration, OpenAI for embeddings and answering, and Qdrant for storing vectorized document chunks.
+# 📄 PDF Q&A with LangChain, OpenAI, and Qdrant
 
-🚀 Features
-Upload and parse PDFs
+A **Streamlit app** that lets you upload a PDF and ask natural language questions about its content. It uses **LangChain**, **OpenAI**, and **Qdrant** to provide accurate answers based solely on the uploaded document.
 
-Chunk PDF content using LangChain's recursive splitter
+---
 
-Store and search document chunks using Qdrant vector store
+## 🚀 **Features**
 
-Ask context-aware questions powered by GPT-4
+- **Upload and parse PDFs**
+- **Split PDF text into smart chunks**
+- **Embed and store content using Qdrant**
+- **Ask context-aware questions powered by GPT-4**
+- **Answers grounded in the uploaded PDF only**
 
-Custom prompt to ensure grounded, PDF-based answers
+---
 
-🧰 Tech Stack
-Streamlit – Web UI
+## 🧰 **Tech Stack**
 
-LangChain – Chunking, Vector DB interface, QA chain
+- **[Streamlit](https://streamlit.io/)** – Interactive Web UI
+- **[LangChain](https://www.langchain.com/)** – Text splitting, Vector store handling, QA chain
+- **[OpenAI](https://openai.com/)** – Embeddings + LLM (GPT-4)
+- **[Qdrant](https://qdrant.tech/)** – High-performance vector database
+- **[PyMuPDF (`fitz`)](https://pymupdf.readthedocs.io/en/latest/)** – PDF parsing and text extraction
 
-OpenAI – Embeddings and LLM
+---
 
-Qdrant – Vector storage and retrieval
+## 📦 **Installation**
 
-PyMuPDF (fitz) – PDF text extraction
+Install the dependencies using `pip`:
 
-📦 Requirements
-Install dependencies:
-
-nginx
-Copy
-Edit
+```bash
 pip install -r requirements.txt
-requirements.txt
-shell
-Copy
-Edit
-streamlit
-pymupdf
-openai
-qdrant-client
-tiktoken
-python-dotenv
-langchain>=0.1.13
-langchain-openai
-langchain-community
-⚙️ Environment Setup
-Create a .env file in your project root:
-
-ini
-Copy
-Edit
-OPENAI_API_KEY=your_openai_api_key
-Ensure Qdrant is running locally on port 6333 (you can use Docker):
-
-yaml
-Copy
-Edit
-docker run -p 6333:6333 -p 6334:6334 qdrant/qdrant
-🧠 How It Works
-Upload PDF: The user uploads a PDF.
-
-Text Extraction: Pages are parsed with fitz (PyMuPDF).
-
-Chunking: The text is split into overlapping chunks.
-
-Embedding + Vector Store: Chunks are embedded via OpenAI and stored in Qdrant.
-
-Retrieval + QA: When a question is asked, relevant chunks are retrieved and passed to GPT-4 for answering.
-
-▶️ Run the App
-arduino
-Copy
-Edit
-streamlit run app.py
-📌 Notes
-Uses RetrievalQA chain with mmr search for diverse, high-relevance results.
-
-Replace gpt-4.1 with another model if needed.
-
-Collection is recreated each run (force_recreate=True), which clears previous data.
-
-🧑‍💻 Author
-Made with ❤️ by Utkarsh Gupta (utk24g@gmail.com)
